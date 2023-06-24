@@ -9,13 +9,13 @@ public class SearchInMountain {
         int peak = findPeakPosition(array);
         System.out.println("Peak In Mountain is "+array[peak]);
 
-        int firstIndexOfOccurrence = binarySearchIndex( array, 3, 0, peak);
+        int firstIndexOfOccurrence = orderAgnosticBinarySearchIndex( array, 3, 0, peak);
         System.out.println("firstIndexOfOccurrence="+firstIndexOfOccurrence);
 
-        int lastIndexOfOccurrence = binarySearchIndex( array, 3, peak, array.length-1);
+        int lastIndexOfOccurrence = orderAgnosticBinarySearchIndex( array, 3, peak, array.length-1);
         System.out.println("lastIndexOfOccurrence="+lastIndexOfOccurrence);
 
-        System.out.println(firstIndexOfOccurrence<lastIndexOfOccurrence?firstIndexOfOccurrence:lastIndexOfOccurrence);
+        System.out.println(Math.min(firstIndexOfOccurrence, lastIndexOfOccurrence));
 
     }
 
@@ -35,7 +35,7 @@ public class SearchInMountain {
     }
 
 
-    static int binarySearchIndex(int[] arr, int target, int start, int end) {
+    static int orderAgnosticBinarySearchIndex(int[] arr, int target, int start, int end) {
         //int start = 0;
         //int end = arr.length - 1;
 
