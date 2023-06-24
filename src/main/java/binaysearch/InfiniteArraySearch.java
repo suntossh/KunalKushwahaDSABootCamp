@@ -1,3 +1,5 @@
+package binaysearch;
+
 public class InfiniteArraySearch {
 
     public static void main(String[] args) {

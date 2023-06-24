@@ -1,3 +1,5 @@
+package binaysearch;
+
 public class BinarySearchFirst {
 
     public static void main(String[] args) {

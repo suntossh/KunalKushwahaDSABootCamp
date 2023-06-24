@@ -1,3 +1,5 @@
+package binaysearch;
+
 import java.util.Arrays;
 
 public class OrderAgnosticBinarySearch {

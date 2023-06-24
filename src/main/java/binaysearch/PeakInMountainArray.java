@@ -1,4 +1,5 @@
-import java.rmi.server.RMIClassLoader;
+package binaysearch;
+
 import java.sql.SQLOutput;
 
 public class PeakInMountainArray {
