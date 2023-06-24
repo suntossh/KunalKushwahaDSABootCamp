@@ -1,14 +1,12 @@
 package binaysearch;
 
 public class Floor {
-
     public static void main(String[] args) {
         System.out.println("Hari Bol");
         int[] array = {2, 3, 5, 9, 14, 16, 18};
         int floor = findFloor(array, 15);
         System.out.println("Floor, index of biggest number less than equal to target = "+floor);
         System.out.println(array[floor]);
-
     }
 
     public static int findFloor(int[] arr, int target) {
