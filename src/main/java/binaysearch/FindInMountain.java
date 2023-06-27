@@ -9,10 +9,8 @@ public class FindInMountain {
         int peak = findPeakPosition(array);
         System.out.println("Peak In Mountain is "+array[peak]);
         System.out.println(binarySearchIndex(array, 4, 0, peak));
-        //System.out.println(binarySearchIndex(array, 4, 0, peak));
-        System.out.println(binarySearchIndex(array, 1, peak, array.length));
-
-
+        System.out.println(binarySearchIndex(array, 4, 0, peak));
+        System.out.println(binarySearchIndex(array, 1, peak+1, array.length-1));
     }
 
     static int findPeakPosition(int[] array) {
