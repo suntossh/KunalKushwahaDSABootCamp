@@ -1,6 +1,5 @@
 package binaysearch;
 
-import java.sql.SQLOutput;
 
 public class PeakInMountainArray {
 
