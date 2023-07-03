@@ -6,12 +6,47 @@ public class BubbleSorting {
 
     public static void main(String[] args) {
 
-        int[] array = {-5, 4, 3, 2, 1};
-        sort(array);
+        int[] array = {-12, 1};
+        bubbleSort(array);
         System.out.println(Arrays.toString(array));
+        int[] array2 = {1, 1, 2, 3, 4, -1};
+
+        selectionSort(array2);
+        System.out.println(Arrays.toString(array2));
+
     }
 
-    private static void sort(int[] array) {
+    private static void selectionSort(int[] array) {
+
+        for (int i = 0; i < array.length; i++) {
+            int lastIndex = array.length - i - 1;
+            int maxIndex = getMaxIndex(array, 0, lastIndex);
+            swap(array, maxIndex, lastIndex);
+
+        }
+
+    }
+
+    private static void swap(int[] array, int maxIndex, int lastIndex) {
+        int temp = array[maxIndex];
+        array[maxIndex] = array[lastIndex];
+        array[lastIndex] = temp;
+    }
+
+    private static int getMaxIndex(int[] array, int start, int end) {
+        int max = start;
+        for (int i = start; i <= end; i++) {
+            if (array[i] > array[max]) {
+                max = i;
+            }
+        }
+
+        return max;
+
+    }
+
+
+    private static void bubbleSort(int[] array) {
         boolean isSwapped = false;
 
         for (int i = 0; i < array.length; i++) {
