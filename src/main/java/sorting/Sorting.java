@@ -2,7 +2,7 @@ package sorting;
 
 import java.util.Arrays;
 
-public class BubbleSorting {
+public class Sorting {
 
     public static void main(String[] args) {
 
@@ -14,6 +14,24 @@ public class BubbleSorting {
         selectionSort(array2);
         System.out.println(Arrays.toString(array2));
 
+        int[] array3 = {1, 1, 2, 3, 4, -1};
+
+        insertionSort(array3);
+        System.out.println(Arrays.toString(array3));
+
+    }
+
+
+    private static void insertionSort(int[] array) {
+        for (int i = 0; i < array.length - 1; i++) {
+            for (int j = i + 1; j > 0; j--) {
+                if (array[j] < array[j - 1]) {
+                    swap(array, j, j - 1);
+                } else {
+                    break;
+                }
+            }
+        }
     }
 
     private static void selectionSort(int[] array) {
