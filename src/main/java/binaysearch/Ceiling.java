@@ -6,7 +6,7 @@ public class Ceiling {
         System.out.println("Hari Bol");
         int[] array = {2, 3, 5, 9, 14, 16, 18};
         int ceiling = findCeiling(array, 15);
-        System.out.println("ceiling, index of smallest number greater than equal to target = "+ceiling);
+        System.out.println("ceiling, index of smallest number greater than equal to target = " + ceiling);
 
 
     }
@@ -19,7 +19,7 @@ public class Ceiling {
 
             int midIndex = start + ((end - start) / 2);
             System.out.println("Middle Index Value = " + midIndex);
-            if ( target < arr[midIndex]) {
+            if (target < arr[midIndex]) {
                 end = midIndex - 1;
             } else if (target > arr[midIndex]) {
                 start = midIndex + 1;

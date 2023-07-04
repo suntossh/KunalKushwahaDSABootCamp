@@ -7,13 +7,13 @@ public class SearchInMountain {
     public static void main(String[] args) {
         int[] array = {2, 3, 4, 5, 6, 7, 4, 3, 2, 1};
         int peak = findPeakPosition(array);
-        System.out.println("Peak In Mountain is "+array[peak]);
+        System.out.println("Peak In Mountain is " + array[peak]);
 
-        int firstIndexOfOccurrence = orderAgnosticBinarySearchIndex( array, 3, 0, peak);
-        System.out.println("firstIndexOfOccurrence="+firstIndexOfOccurrence);
+        int firstIndexOfOccurrence = orderAgnosticBinarySearchIndex(array, 3, 0, peak);
+        System.out.println("firstIndexOfOccurrence=" + firstIndexOfOccurrence);
 
-        int lastIndexOfOccurrence = orderAgnosticBinarySearchIndex( array, 3, peak, array.length-1);
-        System.out.println("lastIndexOfOccurrence="+lastIndexOfOccurrence);
+        int lastIndexOfOccurrence = orderAgnosticBinarySearchIndex(array, 3, peak, array.length - 1);
+        System.out.println("lastIndexOfOccurrence=" + lastIndexOfOccurrence);
 
         System.out.println(Math.min(firstIndexOfOccurrence, lastIndexOfOccurrence));
 
@@ -40,7 +40,7 @@ public class SearchInMountain {
         //int end = arr.length - 1;
 
         boolean isAsc = arr[start] < arr[end];
-        System.out.println(Arrays.toString(arr) + " Array isAsc "+isAsc);
+        System.out.println(Arrays.toString(arr) + " Array isAsc " + isAsc);
 
 
         while (start <= end) {
@@ -48,14 +48,14 @@ public class SearchInMountain {
             int midIndex = start + ((end - start) / 2);
 
 
-            if(isAsc){
-                if ( target < arr[midIndex]) {
+            if (isAsc) {
+                if (target < arr[midIndex]) {
                     end = midIndex - 1;
-                } else  {
+                } else {
                     start = midIndex + 1;
                 }
-            }else{
-                if ( target > arr[midIndex]) {
+            } else {
+                if (target > arr[midIndex]) {
                     end = midIndex - 1;
                 } else {
                     start = midIndex + 1;
@@ -63,7 +63,7 @@ public class SearchInMountain {
             }
             System.out.println("Middle Index Value = " + midIndex);
 
-            if(target == arr[midIndex]){
+            if (target == arr[midIndex]) {
                 return midIndex;
             }
         }

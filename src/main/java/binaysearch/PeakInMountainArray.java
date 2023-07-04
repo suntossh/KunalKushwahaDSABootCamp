@@ -4,11 +4,10 @@ package binaysearch;
 public class PeakInMountainArray {
 
 
-
     public static void main(String[] args) {
         int[] array = {2, 3, 4, 5, 6, 7, 4, 3, 2, 1};
         int peak = findPeakPosition(array);
-        System.out.println("Peak In Mountain is "+array[peak]);
+        System.out.println("Peak In Mountain is " + array[peak]);
     }
 
     static int findPeakPosition(int[] array) {

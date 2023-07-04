@@ -18,8 +18,8 @@ public class OrderAgnosticBinarySearch {
         int start = 0;
         int end = arr.length - 1;
 
-        boolean isAsc = arr[0] < arr[arr.length-1];
-        System.out.println(Arrays.toString(arr) + " Array isAsc "+isAsc);
+        boolean isAsc = arr[0] < arr[arr.length - 1];
+        System.out.println(Arrays.toString(arr) + " Array isAsc " + isAsc);
 
 
         while (start <= end) {
@@ -27,14 +27,14 @@ public class OrderAgnosticBinarySearch {
             int midIndex = start + ((end - start) / 2);
 
 
-            if(isAsc){
-                if ( target < arr[midIndex]) {
+            if (isAsc) {
+                if (target < arr[midIndex]) {
                     end = midIndex - 1;
-                } else  {
+                } else {
                     start = midIndex + 1;
                 }
-            }else{
-                if ( target > arr[midIndex]) {
+            } else {
+                if (target > arr[midIndex]) {
                     end = midIndex - 1;
                 } else {
                     start = midIndex + 1;
@@ -42,7 +42,7 @@ public class OrderAgnosticBinarySearch {
             }
             System.out.println("Middle Index Value = " + midIndex);
 
-            if(target == arr[midIndex]){
+            if (target == arr[midIndex]) {
                 return midIndex;
             }
         }

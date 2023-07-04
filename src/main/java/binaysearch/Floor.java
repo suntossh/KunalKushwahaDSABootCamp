@@ -5,7 +5,7 @@ public class Floor {
         System.out.println("Hari Bol");
         int[] array = {2, 3, 5, 9, 14, 16, 18};
         int floor = findFloor(array, 15);
-        System.out.println("Floor, index of biggest number less than equal to target = "+floor);
+        System.out.println("Floor, index of biggest number less than equal to target = " + floor);
         System.out.println(array[floor]);
     }
 
@@ -17,7 +17,7 @@ public class Floor {
 
             int midIndex = start + ((end - start) / 2);
             System.out.println("Middle Index Value = " + midIndex);
-            if ( target < arr[midIndex]) {
+            if (target < arr[midIndex]) {
                 end = midIndex - 1;
             } else if (target > arr[midIndex]) {
                 start = midIndex + 1;

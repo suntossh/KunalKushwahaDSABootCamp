@@ -10,7 +10,7 @@ public class FirstAndLastPosition {
         int first = findPosition(array, 5, true);
         int last = findPosition(array, 5, false);
 
-        System.out.println("First And Last Position, is= "+ Arrays.toString(new int[]{first, last}));
+        System.out.println("First And Last Position, is= " + Arrays.toString(new int[]{first, last}));
 
 
     }
@@ -23,15 +23,15 @@ public class FirstAndLastPosition {
         while (start <= end) {
             int midIndex = start + ((end - start) / 2);
             System.out.println("Middle Index Value = " + midIndex);
-            if ( target < arr[midIndex]) {
+            if (target < arr[midIndex]) {
                 end = midIndex - 1;
             } else if (target > arr[midIndex]) {
                 start = midIndex + 1;
             } else {
                 answer = midIndex;
-                if(findFirst){
+                if (findFirst) {
                     end = midIndex - 1;
-                }else{
+                } else {
                     start = midIndex + 1;
                 }
             }

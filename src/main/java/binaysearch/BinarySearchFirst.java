@@ -19,7 +19,7 @@ public class BinarySearchFirst {
 
             int midIndex = start + ((end - start) / 2);
             System.out.println("Middle Index Value = " + midIndex);
-            if ( target < arr[midIndex]) {
+            if (target < arr[midIndex]) {
                 end = midIndex - 1;
             } else if (target > arr[midIndex]) {
                 start = midIndex + 1;
