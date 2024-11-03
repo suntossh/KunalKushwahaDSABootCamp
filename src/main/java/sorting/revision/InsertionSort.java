@@ -23,8 +23,8 @@ public class InsertionSort {
 
     private static void insertionSort(int[] arr) {
 
-        for (int i = 0; i < arr.length-1; i++) {
-            for (int j = i+1; j > 0 ; j--) {
+        for (int i = 0; i < arr.length-1; i++) {// each pass
+            for (int j = i+1; j > 0 ; j--) { // compare from left to right
                 if(arr[j]<arr[j-1]){
                     swap(arr,j-1,j);
                 }else{
