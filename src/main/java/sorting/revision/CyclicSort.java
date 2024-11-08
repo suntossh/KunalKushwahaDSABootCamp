@@ -15,19 +15,24 @@ import java.util.Arrays;
  */
 public class CyclicSort {
     public static void main(String[] args) {
-        int[] arr = {5,4,3,2,1};
+        int[] arr = {3,5,2,1,4};
         cyclicSort(arr);
         System.out.println(Arrays.toString(arr));
     }
-
+// 3, 5, 2, 1, 4
+    // check if value for current index is at correct expected index. if not then swap else move forward
+    //
     private static void cyclicSort(int[] arr) {
-        int index = 0;
-        while (index < arr.length) {
-            int correctIndex = arr[index] - 1;
-            if (arr[index] != arr[correctIndex]) {
-                swap(arr, index, correctIndex);
+        int i = 0;
+        while (i < arr.length) {
+            // what should be index for 3 value
+            int correctIndex = arr[i] - 1;
+            // check weather this index is i or not .
+            // if the array of my i is not eq to element at the correct index then swap.
+            if (arr[i] != arr[correctIndex]) {
+                swap(arr, i, correctIndex);
             } else {
-                index++;
+                i++;
             }
         }
     }
