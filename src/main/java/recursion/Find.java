@@ -6,13 +6,14 @@ import java.util.List;
 public class Find {
     public static void main(String[] args) {
 
-        int[] arr = {4, 4, 4, 4, 5, 7, 8};
+        int[] arr = {1, 4, 4, 4, 5, 7, 8};
         //System.out.println(find(arr, -31, 0));
         //System.out.println(findIndex(arr, -3, 0));
         //System.out.println(findIndexLast(arr, -3, arr.length-1));
-        List<Integer> allIndices = new ArrayList<Integer>();
-        findAllIndex(arr, 4, 0, allIndices);
-        System.out.println(allIndices);
+//        List<Integer> allIndices = new ArrayList<Integer>();
+//        findAllIndex(arr, 4, 0, allIndices);
+
+        System.out.println(findAllIndex2(arr,4,0));
 
     }
 
@@ -57,15 +58,19 @@ public class Find {
         findAllIndex(arr, target, index + 1, allInd);
     }
 
-//    public static List<Integer> findAllIndex2(int[] arr, int target, int index) {
-//        List<Integer> indices = new ArrayList<Integer>();
-//        if (index == arr.length - 1) {
-//            return indices;
-//        }
-//        if (arr[index] == target) {
-//            indices.add(index);
-//        }
-//        findAllIndex2(arr, target, index + 1, allInd);
-//    }
+    public static List<Integer> findAllIndex2(int[] arr, int target, int index) {
+        List<Integer> indices = new ArrayList<Integer>();
+        if (index == arr.length - 1) {
+            return indices;
+        }
+        //index added for the current call
+        if (arr[index] == target) {
+            indices.add(index);
+        }
+
+        List<Integer>  indexOfFollowingCall = findAllIndex2(arr, target, index + 1);
+        indices.addAll(indexOfFollowingCall);
+        return indices;
+    }
 
 }
