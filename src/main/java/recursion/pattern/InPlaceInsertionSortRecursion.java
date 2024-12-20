@@ -4,10 +4,23 @@ import java.util.Arrays;
 
 public class InPlaceInsertionSortRecursion {
     public static void main(String[] args) {
-        // Idea is [5,4,3,2,1] break the array in half and then sort each half
-        // then compare the elements from each half and insert smaller elements
-        // from the previous sorted half in a 3rd New Array
-        // return this 3rd Array.
+//        Example Walkthrough
+//        Input Array: {5, 4, 3, 2, 1}
+//        Step 1: Division
+//
+//        Divide into: {5, 4, 3} and {2, 1}.
+//        Further divide {5, 4, 3} into {5, 4} and {3}, and so on.
+//                Step 2: Base Case
+//
+//        {5}, {4}, {3}, {2}, {1} are the smallest divisions.
+//        Step 3: Merging
+//
+//        Merge {5} and {4} into {4, 5}.
+//        Merge {4, 5} and {3} into {3, 4, 5}.
+//        Similarly, merge {2} and {1} into {1, 2}.
+//        Step 4: Final Merge
+//
+//        Merge {3, 4, 5} and {1, 2} into {1, 2, 3, 4, 5}.
 
         int[] arr = {5, 4, 3, 2, 1};
         sort(arr, 0, arr.length);
