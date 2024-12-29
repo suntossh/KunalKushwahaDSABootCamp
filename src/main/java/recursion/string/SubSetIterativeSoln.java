@@ -66,10 +66,10 @@ public class SubSetIterativeSoln {
         int end = 0;
 
         for (int j = 0; j < arr.length; j++) {
-            if(j>0 && arr[j] == arr[j-1]){
+            if (j > 0 && arr[j] == arr[j - 1]) {
                 start = end + 1;
             }
-            end = outer.size() -1;
+            end = outer.size() - 1;
             int n = outer.size();
             for (int i = start; i < n; i++) {
                 List<String> tempList = new ArrayList<String>(outer.get(i));
