@@ -1,11 +1,17 @@
 package recursion.string;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class SubSequence {
     public static void main(String[] args) {
-        subSeq("","abc");
-        System.out.println(subSeqRet("","abc"));
+//        subSeq("","abc");
+//        System.out.println(subSeqRet("","abc"));
+
+//        subSeqAscii("","abc");
+//
+        System.out.println(subSeqRetAscii("", "abc"));
     }
 
     static void subSeq(String subsequence, String unprocessed) {
@@ -24,7 +30,7 @@ public class SubSequence {
     static ArrayList<String> subSeqRet(String p, String unp) {
 
         if (unp.isEmpty()) {
-            ArrayList list= new ArrayList();
+            ArrayList list = new ArrayList();
             list.add(p);
             return list;
         }
@@ -36,4 +42,42 @@ public class SubSequence {
         return leftList;
 
     }
+
+
+    static void subSeqAscii(String subsequence, String unprocessed) {
+        if (unprocessed.isEmpty()) {
+            System.out.println(subsequence);
+            return;
+        }
+        char s = unprocessed.charAt(0);
+
+        subSeqAscii(subsequence + s, unprocessed.substring(1));
+        subSeqAscii(subsequence, unprocessed.substring(1));
+        subSeqAscii(subsequence + (s + 0), unprocessed.substring(1));
+
+    }
+
+    static List<String> subSeqRetAscii(String subsequence, String unprocessed) {
+        if (unprocessed.isEmpty()) {
+            List<String> subseqval = new ArrayList<>();
+
+            if (!subsequence.isEmpty()) {
+                subseqval.add(subsequence);
+            }
+
+            return subseqval;
+        }
+        char s = unprocessed.charAt(0);
+
+        List<String> first = subSeqRetAscii(subsequence + s, unprocessed.substring(1));
+        List<String> second = subSeqRetAscii(subsequence, unprocessed.substring(1));
+        List<String> third = subSeqRetAscii(subsequence + (s + 0), unprocessed.substring(1));
+
+        first.addAll(second);
+        first.addAll(third);
+
+        return first;
+    }
+
+
 }
