@@ -6,12 +6,12 @@ import java.util.List;
 
 public class SubSequence {
     public static void main(String[] args) {
-//        subSeq("","abc");
+       subSeq("","abc");
 //        System.out.println(subSeqRet("","abc"));
 
 //        subSeqAscii("","abc");
 //
-        System.out.println(subSeqRetAscii("", "abc"));
+     //   System.out.println(subSeqRetAscii("", "abc"));
     }
 
     static void subSeq(String subsequence, String unprocessed) {
